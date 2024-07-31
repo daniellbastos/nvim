@@ -1,16 +1,19 @@
 vim.cmd([[colorscheme gruvbox]])
-vim.cmd 'set background=dark'
+-- vim.cmd 'set background=dark'
+-- vim.cmd.colorscheme 'catppuccin'
+vim.cmd 'set background=light'
 vim.cmd 'syntax enable'
 vim.cmd 'set number'
 vim.cmd 'set ruler'
 vim.cmd 'set autoread'
 vim.cmd 'set termguicolors'
 vim.cmd 'set colorcolumn=80,110'
-vim.cmd 'set background=dark'
 vim.cmd 'set t_Co=256'
 vim.cmd 'set encoding=utf-8'
 vim.cmd 'set showbreak=↪'
 vim.cmd 'set cursorline!'
+vim.cmd 'set guicursor=i:block'
+vim.cmd 'set tags=tags'
 
 -- List chars (whitespace, tab, ...)
 vim.opt.listchars = {
@@ -28,11 +31,7 @@ vim.cmd 'set clipboard=unnamedplus'
 vim.cmd 'set nobackup'
 vim.cmd 'set nowritebackup'
 vim.cmd 'set noswapfile'
-vim.cmd 'set linespace=4'
 vim.cmd 'set expandtab'
-vim.cmd 'set tabstop=4'
-vim.cmd 'set softtabstop=4'
-vim.cmd 'set shiftwidth=4'
 vim.cmd 'set shiftround'
 vim.cmd 'set copyindent'
 vim.cmd 'set backspace=indent,eol,start'
@@ -54,4 +53,31 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.opt_local.shiftwidth = 2
 		vim.opt_local.tabstop = 2
 	end
+})
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "python",
+    callback = function()
+        vim.cmd 'set linespace=4'
+        vim.cmd 'set tabstop=4'
+        vim.cmd 'set softtabstop=4'
+        vim.cmd 'set shiftwidth=4'
+    end
+})
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "javascript",
+    callback = function()
+        vim.cmd 'set linespace=2'
+        vim.cmd 'set tabstop=2'
+        vim.cmd 'set softtabstop=2'
+        vim.cmd 'set shiftwidth=2'
+    end
+})
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "typescript",
+    callback = function()
+        vim.cmd 'set linespace=2'
+        vim.cmd 'set tabstop=2'
+        vim.cmd 'set softtabstop=2'
+        vim.cmd 'set shiftwidth=2'
+    end
 })

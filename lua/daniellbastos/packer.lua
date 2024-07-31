@@ -11,6 +11,7 @@ return require('packer').startup(function(use)
 	}
 	-- themes
 	use {'ellisonleao/gruvbox.nvim' }
+	use { "catppuccin/nvim", as = "catppuccin" }
 	use('nvim-treesitter/nvim-treesitter', {run =':TSUpdate'})
 	use('mbbill/undotree')
 
