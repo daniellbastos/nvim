@@ -81,3 +81,12 @@ vim.api.nvim_create_autocmd("FileType", {
         vim.cmd 'set shiftwidth=2'
     end
 })
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "typescriptreact",
+    callback = function()
+        vim.cmd 'set linespace=2'
+        vim.cmd 'set tabstop=2'
+        vim.cmd 'set softtabstop=2'
+        vim.cmd 'set shiftwidth=2'
+    end
+})
